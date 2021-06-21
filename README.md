@@ -26,17 +26,17 @@ Watch this tool in action in the following short GIF movie.
 Get the package
 
 ```sh
-npm i --save editorjs-alert
+npm i --save editorjs-summary
 ```
 
 Include module at your application
 
 ```js
-const Header = require('editorjs-alert');
+const Summary = require('editorjs-summary');
 
 // OR
 
-import Alert from 'editorjs-alert';
+import Alert from 'editorjs-summary';
 ```
 
 ### Download to your project's source dir
@@ -53,7 +53,7 @@ You can load specific version of package from [jsDelivr CDN](https://www.jsdeliv
 
 ## Usage
 
-Add a new Tool `Alert` to the `tools` property of the Editor.js initial config.
+Add a new Tool `summary` to the `tools` property of the Editor.js initial config.
 
 ```js
 var editor = EditorJS({
@@ -61,7 +61,7 @@ var editor = EditorJS({
 
   tools: {
     // ...
-    alert: Alert,
+    summary: Summary,
   },
 
   // ...
@@ -77,7 +77,7 @@ var editor = EditorJS({
   tools: {
     //...
     alert: {
-      class: Alert,
+      class: Summary,
       inlineToolbar: true,
       shortcut: 'CMD+SHIFT+A',
       config: {
