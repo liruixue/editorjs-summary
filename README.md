@@ -1,4 +1,4 @@
-# Editor.js Alert Tool
+# Editor.js summary Tool
 
 [![npm](https://img.shields.io/npm/v/editorjs-alert.svg?style=?style=flat&logo=appveyor)](https://www.npmjs.com/package/editorjs-alert) ![Version of EditorJS that the plugin is compatible with](https://badgen.net/badge/Editor.js/v2.0/blue)
 
@@ -97,8 +97,8 @@ All properties are optional.
 
 | Field                | Type     | Default Value  | Description                                                                                                                |
 | -------------------- | -------- | -------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| `defaultType`        | `string` | `info`         | default Alert type (should be either of `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `light` or `dark`) |
-| `messagePlaceholder` | `string` | `Type here...` | placeholder to show in Alert`s message input                                                                               |
+| `defaultType`        | `string` | `info`         | default Summary type (should be either of `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `light` or `dark`) |
+| `messagePlaceholder` | `string` | `Type here...` | placeholder to show in Summary`s message input                                                                               |
 
 ## Output data
 
@@ -109,7 +109,7 @@ All properties are optional.
 
 ```json
 {
-  "type": "alert",
+  "type": "summary",
   "data": {
     "type": "danger",
     "text": "<strong>Holy smokes!</strong><br>Something seriously <em>bad</em> happened."
