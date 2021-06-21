@@ -1,23 +1,23 @@
 # Editor.js summary Tool
 
-[![npm](https://img.shields.io/npm/v/editorjs-alert.svg?style=?style=flat&logo=appveyor)](https://www.npmjs.com/package/editorjs-alert) ![Version of EditorJS that the plugin is compatible with](https://badgen.net/badge/Editor.js/v2.0/blue)
+[![npm](https://img.shields.io/npm/v/editorjs-summary.svg?style=?style=flat&logo=appveyor)](https://www.npmjs.com/package/editorjs-summary) ![Version of EditorJS that the plugin is compatible with](https://badgen.net/badge/Editor.js/v2.0/blue)
 
-Provides Alert blocks for the [Editor.js](https://editorjs.io/).
+Provides Summary blocks for the [Editor.js](https://editorjs.io/).
 
 ## Features
 
-- 8 different alert block styes
-- Convert from other blocks into an Alert block
-- Convert an Alert block into other blocks
+- 8 different summary block styes
+- Convert from other blocks into an Summary block
+- Convert an Summary block into other blocks
 
 ## How does it look like?
 
 Watch this tool in action in the following short GIF movie.
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/876195/87923460-294ee780-ca9b-11ea-8a73-009453d77478.gif" alt="Alert sneak peek GIF!">
+  <img src="https://user-images.githubusercontent.com/876195/87923460-294ee780-ca9b-11ea-8a73-009453d77478.gif" alt="Summary sneak peek GIF!">
 
-**Try it out yourself on the [demo page](https://vishaltelangre.github.io/editorjs-alert/examples/demo.html).**
+**Try it out yourself on the [demo page](https://vishaltelangre.github.io/editorjs-summary/examples/demo.html).**
 
 ## Installation
 
@@ -36,7 +36,7 @@ const Summary = require('editorjs-summary');
 
 // OR
 
-import Alert from 'editorjs-summary';
+import Summary from 'editorjs-summary';
 ```
 
 ### Download to your project's source dir
@@ -45,10 +45,10 @@ Copy [`dist/bundle.js`](./dist/bundle.js) file to your page.
 
 ### Load from CDN
 
-You can load specific version of package from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/editorjs-alert).
+You can load specific version of package from [jsDelivr CDN](https://www.jsdelivr.com/package/npm/editorjs-summary).
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/editorjs-alert@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/editorjs-summary@latest"></script>
 ```
 
 ## Usage
@@ -68,7 +68,7 @@ var editor = EditorJS({
 });
 ```
 
-Or initialize Alert tool with additional optional settings
+Or initialize Summary tool with additional optional settings
 
 ```js
 var editor = EditorJS({
@@ -76,7 +76,7 @@ var editor = EditorJS({
 
   tools: {
     //...
-    alert: {
+    summary: {
       class: Summary,
       inlineToolbar: true,
       shortcut: 'CMD+SHIFT+A',
@@ -104,8 +104,8 @@ All properties are optional.
 
 | Field   | Type     | Description                                                                                               |
 | ------- | -------- | --------------------------------------------------------------------------------------------------------- |
-| message | `string` | Alert message                                                                                             |
-| type    | `string` | Alert type among one of `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `light` or `dark` |
+| message | `string` | Summary message                                                                                             |
+| type    | `string` | Summary type among one of `primary`, `secondary`, `info`, `success`, `warning`, `danger`, `light` or `dark` |
 
 ```json
 {

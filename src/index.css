@@ -1,15 +1,15 @@
-.cdx-alert {
+.cdx-summary {
   position: relative;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
 }
 
-.cdx-alert__message {
+.cdx-summary__message {
   outline: none;
 }
 
-.cdx-alert [contentEditable='true'][data-placeholder]::before {
+.cdx-summary [contentEditable='true'][data-placeholder]::before {
   position: absolute;
   content: attr(data-placeholder);
   color: #707684;
@@ -17,75 +17,75 @@
   opacity: 0;
 }
 
-.cdx-alert [contentEditable='true'][data-placeholder]:empty::before {
+.cdx-summary [contentEditable='true'][data-placeholder]:empty::before {
   opacity: 1;
 }
 
-.cdx-alert [contentEditable='true'][data-placeholder]:empty:focus::before {
+.cdx-summary [contentEditable='true'][data-placeholder]:empty:focus::before {
   opacity: 0;
 }
 
-.cdx-alert-primary {
+.cdx-summary-primary {
   background-color: #ebf8ff;
   border: 1px solid #4299e1;
   color: #2b6cb0;
 }
 
-.cdx-alert-secondary {
+.cdx-summary-secondary {
   background-color: #f7fafc;
   border: 1px solid #cbd5e0;
-  color: #222731;
+  color: #616161;
 }
 
-.cdx-alert-info {
+.cdx-summary-info {
   background-color: #e6fdff;
   border: 1px solid #4cd4ce;
   color: #00727c;
 }
 
-.cdx-alert-success {
+.cdx-summary-success {
   background-color: #f0fff4;
   border: 1px solid #68d391;
   color: #2f855a;
 }
 
-.cdx-alert-warning {
+.cdx-summary-warning {
   background-color: #fffaf0;
   border: 1px solid #ed8936;
   color: #c05621;
 }
 
-.cdx-alert-danger {
+.cdx-summary-danger {
   background-color: #fff5f5;
   border: 1px solid #fc8181;
   color: #c53030;
 }
 
-.cdx-alert-light {
+.cdx-summary-light {
   background-color: #fff;
   border: 1px solid #edf2f7;
   color: #1a202c;
 }
 
-.cdx-alert-dark {
+.cdx-summary-dark {
   background-color: #2d3748;
   border: 1px solid #1a202c;
   color: #d3d3d3;
 }
 
-.cdx-alert.cdx-settings-button {
+.cdx-summary.cdx-settings-button {
   margin: 3px;
   width: 28px;
   height: 28px;
   opacity: 0.5;
 }
 
-.cdx-alert.cdx-settings-button:hover {
+.cdx-summary.cdx-settings-button:hover {
   opacity: 1;
 }
 
-.cdx-alert.cdx-settings-button--active,
-.cdx-alert.ce-settings__button--focused {
+.cdx-summary.cdx-settings-button--active,
+.cdx-summary.ce-settings__button--focused {
   font-weight: bold;
   opacity: 0.9;
 }

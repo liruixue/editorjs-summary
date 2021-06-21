@@ -1,5 +1,5 @@
 /**
- * Alert block for the Editor.js.
+ * Summary block for the Editor.js.
  *
  * @author Vishal Telangre
  * @license MIT
@@ -16,22 +16,22 @@ require('./index.css').toString();
 import ToolboxIcon from '../assets/icon.svg';
 
 /**
- * @class Alert
- * @classdesc Alert Tool for Editor.js
- * @property {AlertData} data - Alert Tool`s input and output data
+ * @class Summary
+ * @classdesc Summary Tool for Editor.js
+ * @property {SummaryData} data - Summary Tool`s input and output data
  * @property {object} api - Editor.js API instance
  *
- * @typedef {object} AlertData
- * @description Alert Tool`s input and output data
- * @property {string} type - Alert type
- * @property {string} message - Alert message
+ * @typedef {object} SummaryData
+ * @description Summary Tool`s input and output data
+ * @property {string} type - Summary type
+ * @property {string} message - Summary message
  *
- * @typedef {object} AlertConfig
- * @description Alert Tool`s initial configuration
- * @property {string} defaultType - default Alert type
- * @property {string} messagePlaceholder - placeholder to show in Alert`s message input
+ * @typedef {object} SummaryConfig
+ * @description Summary Tool`s initial configuration
+ * @property {string} defaultType - default Summary type
+ * @property {string} messagePlaceholder - placeholder to show in Summary`s message input
  */
-export default class Alert {
+export default class Summary {
   /**
    * Get Toolbox settings
    *
@@ -41,12 +41,12 @@ export default class Alert {
   static get toolbox() {
     return {
       icon: ToolboxIcon,
-      title: 'Alert',
+      title: 'Summary',
     };
   }
 
   /**
-   * Allow to press Enter inside the Alert block
+   * Allow to press Enter inside the Summary block
    * @public
    * @returns {boolean}
    */
@@ -55,7 +55,7 @@ export default class Alert {
   }
 
   /**
-   * Default Alert type
+   * Default Summary type
    *
    * @public
    * @returns {string}
@@ -65,7 +65,7 @@ export default class Alert {
   }
 
   /**
-   * Default placeholder for Alert message
+   * Default placeholder for Summary message
    *
    * @public
    * @returns {string}
@@ -75,7 +75,7 @@ export default class Alert {
   }
 
   /**
-   * Supported Alert types
+   * Supported Summary types
    *
    * @public
    * @returns {array}
@@ -94,7 +94,7 @@ export default class Alert {
   }
 
   /**
-   * Alert Tool`s styles
+   * Summary Tool`s styles
    *
    * @returns {Object}
    */
@@ -102,29 +102,29 @@ export default class Alert {
     return {
       settingsButton: this.api.styles.settingsButton,
       settingsButtonActive: this.api.styles.settingsButtonActive,
-      wrapper: 'cdx-alert',
-      wrapperForType: (type) => `cdx-alert-${type}`,
-      message: 'cdx-alert__message',
+      wrapper: 'cdx-summary',
+      wrapperForType: (type) => `cdx-summary-${type}`,
+      message: 'cdx-summary__message',
     };
   }
 
   /**
    * Render plugin`s main Element and fill it with saved data
    *
-   * @param {AlertData} data — previously saved data
-   * @param {AlertConfig} config — user config for Tool
+   * @param {SummaryData} data — previously saved data
+   * @param {SummaryConfig} config — user config for Tool
    * @param {Object} api - Editor.js API
    * @param {boolean} readOnly - read only mode flag
    */
   constructor({ data, config, api, readOnly }) {
     this.api = api;
 
-    this.defaultType = config.defaultType || Alert.DEFAULT_TYPE;
+    this.defaultType = config.defaultType || Summary.DEFAULT_TYPE;
     this.messagePlaceholder =
-      config.messagePlaceholder || Alert.DEFAULT_MESSAGE_PLACEHOLDER;
+      config.messagePlaceholder || Summary.DEFAULT_MESSAGE_PLACEHOLDER;
 
     this.data = {
-      type: Alert.ALERT_TYPES.includes(data.type)
+      type: Summary.ALERT_TYPES.includes(data.type)
         ? data.type
         : this.defaultType,
       message: data.message || '',
@@ -145,7 +145,7 @@ export default class Alert {
   }
 
   /**
-   * Create Alert Tool container
+   * Create Summary Tool container
    *
    * @returns {Element}
    */
@@ -177,7 +177,7 @@ export default class Alert {
   renderSettings() {
     const settingsContainer = this._make('div');
 
-    Alert.ALERT_TYPES.forEach((type) => {
+    Summary.ALERT_TYPES.forEach((type) => {
       const settingsButton = this._make(
         'div',
         [
@@ -197,7 +197,7 @@ export default class Alert {
 
       // Set up click handler
       settingsButton.addEventListener('click', () => {
-        this._changeAlertType(type);
+        this._changeSummaryType(type);
 
         // Un-highlight previous type button
         settingsContainer
@@ -217,36 +217,36 @@ export default class Alert {
   }
 
   /**
-   * Helper for changing style of Alert block with the selected Alert type
+   * Helper for changing style of Summary block with the selected Summary type
    *
-   * @param {string} newType - new Alert type to be applied to the block
+   * @param {string} newType - new Summary type to be applied to the block
    * @private
    */
-  _changeAlertType(newType) {
+  _changeSummaryType(newType) {
     // Save new type
     this.data.type = newType;
 
-    Alert.ALERT_TYPES.forEach((type) => {
-      const alertClass = this.CSS.wrapperForType(type);
+    Summary.ALERT_TYPES.forEach((type) => {
+      const summaryClass = this.CSS.wrapperForType(type);
 
-      // Remove the old Alert type class
-      this.container.classList.remove(alertClass);
+      // Remove the old Summary type class
+      this.container.classList.remove(summaryClass);
 
       if (newType === type) {
-        // Add an Alert class for the selected Alert type
-        this.container.classList.add(alertClass);
+        // Add an Summary class for the selected Summary type
+        this.container.classList.add(summaryClass);
       }
     });
   }
 
   /**
-   * Extract Alert data from Alert Tool element
+   * Extract Summary data from Summary Tool element
    *
-   * @param {HTMLDivElement} alertElement - element to save
-   * @returns {AlertData}
+   * @param {HTMLDivElement} summaryElement - element to save
+   * @returns {SummaryData}
    */
-  save(alertElement) {
-    const messageEl = alertElement.querySelector(`.${this.CSS.message}`);
+  save(summaryElement) {
+    const messageEl = summaryElement.querySelector(`.${this.CSS.message}`);
 
     return { ...this.data, message: messageEl.innerHTML };
   }
@@ -277,7 +277,7 @@ export default class Alert {
   }
 
   /**
-   * Fill Alert's message with the pasted content
+   * Fill Summary's message with the pasted content
    *
    * @param {PasteEvent} event - event with pasted content
    */
@@ -291,13 +291,13 @@ export default class Alert {
   }
 
   /**
-   * Allow Alert to be converted to/from other blocks
+   * Allow Summary to be converted to/from other blocks
    */
   static get conversionConfig() {
     return {
-      // export Alert's message for other blocks
+      // export Summary's message for other blocks
       export: (data) => data.message,
-      // fill Alert's message from other block's export string
+      // fill Summary's message from other block's export string
       import: (string) => {
         return {
           message: string,
@@ -308,7 +308,7 @@ export default class Alert {
   }
 
   /**
-   * Sanitizer config for Alert Tool saved data
+   * Sanitizer config for Summary Tool saved data
    * @returns {Object}
    */
   static get sanitize() {

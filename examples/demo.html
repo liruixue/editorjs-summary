@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Editor.js Alert Demo</title>
+    <title>Editor.js Summary Demo</title>
     <style>
       body {
         font-family: 'Noto Sans JP', Helvetica Neue, Arial, Noto Sans,
@@ -60,7 +60,7 @@
   </head>
   <body>
     <a
-      href="https://github.com/vishaltelangre/editorjs-alert"
+      href="https://github.com/vishaltelangre/editorjs-summary"
       class="github-corner"
       aria-label="View source on GitHub"
       ><svg
@@ -102,25 +102,25 @@
             {
               type: 'paragraph',
               data: {
-                text: '<h1>Editor.js Alert Demo</h1>',
+                text: '<h1>Editor.js Summary Demo</h1>',
               },
             },
             {
-              type: 'alert',
+              type: 'summary',
               data: {
                 type: 'primary',
                 message: 'Something happened that you should know about.',
               },
             },
             {
-              type: 'alert',
+              type: 'summary',
               data: {
                 type: 'info',
                 message: 'We did something <strong>new</strong>...',
               },
             },
             {
-              type: 'alert',
+              type: 'summary',
               data: {
                 type: 'warning',
                 message:
@@ -128,7 +128,7 @@
               },
             },
             {
-              type: 'alert',
+              type: 'summary',
               data: {
                 type: 'danger',
                 message:
@@ -138,8 +138,8 @@
           ],
         },
         tools: {
-          alert: {
-            class: Alert,
+          summary: {
+            class: Summary,
             /* to display inline tools, enable `inlineToolbar` option */
             inlineToolbar: true,
           },
