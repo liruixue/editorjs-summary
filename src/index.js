@@ -41,7 +41,7 @@ export default class Summary {
   static get toolbox() {
     return {
       icon: ToolboxIcon,
-      title: 'Summary',
+      title: '全书点评',
     };
   }
 
